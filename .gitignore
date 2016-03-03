@@ -14,7 +14,7 @@
 # these rules might exclude image files for figures etc.
 # *.ps
 # *.eps
-# *.pdf
+*.pdf
 
 ## Bibliography auxiliary files (bibtex/biblatex/biber):
 *.bbl
@@ -67,11 +67,11 @@ acs-*.bib
 *.eledsec[1-9][0-9][0-9]R
 
 # glossaries
-*.acn
-*.acr
-*.glg
-*.glo
-*.gls
+#*.acn
+#*.acr
+#*.glg
+#*.glo
+#*.gls
 
 # gnuplottex
 *-gnuplottex-*
