@@ -1,0 +1,258 @@
+\section{Was man einstellen kann}\label{was-man-einstellen-kann}
+
+Einige \emph{Dinge} kann man bei der Diplomarbeit auch noch anpassen.
+Einiges ist sogar in der lyx- bzw. tex-Datei schon vorgesehen -- bitte
+den Anfang des Source-Codes aufmerksam lesen.
+
+\subsection{Inhalt/Kapitel}\label{inhaltkapitel}
+
+Einige Ideen zur Gliederung der Arbeit gibt es unter
+\url{http://www.diplomarbeiten-bbs.at/} \footnote{\url{http://www.diplomarbeiten-bbs.at/erstellung/durchf\%C3\%BChrung/gliederung-der-diplomarbeit-und-formale-vorgaben-0}}
+
+\subsection{Einseitig/zweiseitig}\label{einseitigzweiseitig}
+
+Korrekturexemplar immer einseitig drucken. Beim fertigen Buch sind beide
+Varianten möglich -- bitte mit dem Betreuer abklären.
+
+\subsection{Farben}\label{farben}
+
+\begin{itemize}
+\tightlist
+\item
+  Deckblatt mit Logo immer in Farbe
+\item
+  Farbausdrucke sind viel teurer -- Notwendigkeit prüfen und mit dem
+  Betreuer abklären.
+\item
+  am aufwändigsten: ein paar Seiten in Farbe
+\item
+  falls Schwarz-Weiß: kein Logo beim laufenden Text
+\end{itemize}
+
+\subsection{Autor}\label{autor}
+
+Bei der Diplomarbeit muss jeder Text einem Autor zuzuordnen sein. Man
+kann das wie in der Vorlage in der Fußzeile machen. Alternativ kann man
+auch eine Übersicht als Anhang eingefügt werden -- bitte mit dem
+Betreuer abklären.
+
+\subsection{Absätze}\label{absuxe4tze}
+
+\subsubsection{Einzug}\label{einzug}
+
+Den Beginn eines neuen Absatzes kann man durch Abstand oder durch
+Einrücken kennzeichnen.
+
+Diese Einstellung wird in der Vorlage bzw. im Header gemacht:
+
+\begin{lstlisting}
+%\parindent0pt % auskommentieren, wenn keine Einrueckung der 
+               % ersten Absatzzeile gewuenscht
+%\parskip1.5ex plus0.5ex minus0.5ex % flexibler Absatzabstand
+\end{lstlisting}
+
+Die Option \lstinline!parskip=half! bei \lstinline!documentclass!
+ersetzt bereits den Absatzeinzug durch einen Absatzabstand.
+
+oder \url{http://ctan.org/pkg/parskip}
+
+\begin{lstlisting}
+\usepackage[parfill]{parskip}
+\end{lstlisting}
+
+\subsubsection{noch schöner}\label{noch-schuxf6ner}
+
+\url{http://www.khirevich.com/latex/microtype/}
+
+\subsection{Aufzählungen}\label{aufzuxe4hlungen}
+
+Man kann die Einrückung und vieles mehr anpassen:
+
+\begin{lstlisting}
+\usepackage{enumitem}
+\setlist[1]{labelindent=\parindent}
+\setlist{align=left}
+\setlist[itemize]{leftmargin=*}
+
+% oder: 
+\setlength\partopsep{0.5ex}
+\end{lstlisting}
+
+\subsection{Warnungen}\label{warnungen}
+
+\begin{lstlisting}
+%\sloppy  % etwas laxere Abstandskontrolle (weniger Fehlermeldungen)
+\end{lstlisting}
+
+\subsection{Listings}\label{listings}
+
+Sonderzeichen:
+
+\url{http://en.wikibooks.org/wiki/LaTeX/Source_Code_Listings\#Encoding_issue}
+
+Anpassen:
+
+\url{http://stackoverflow.com/questions/1965702/how-to-mark-line-breaking-of-long-lines}
+
+\url{http://www.bollchen.de/blog/2011/04/good-looking-line-breaks-with-the-listings-package/}
+
+\subsection{Zitierstil:}\label{zitierstil}
+
+Bitte mit dem Betreuer abklären.
+
+\begin{itemize}
+\tightlist
+\item
+  plaindin - mit nummern {[}1{]}
+\item
+  alphadin - mit Text+Jahr {[}Hor99{]}
+\end{itemize}
+
+\subsection{Glossar}\label{glossar}
+
+\begin{itemize}
+\tightlist
+\item
+  \url{http://texwelt.de/wissen/fragen/10496/glossaries-alle-symbole-nur-verwendete-abkurzungen-anzeigen}
+\item
+  \url{http://en.wikibooks.org/wiki/LaTeX/Glossary} für die
+  verschiedenen Formen
+\end{itemize}
+
+\subsection{Ausdruck zu weit
+oben/unten}\label{ausdruck-zu-weit-obenunten}
+
+Man kann das Layout anpassen: Position auf Seite
+
+\begin{lstlisting}
+\voffset10mm
+\end{lstlisting}
+
+\subsection{URLs}\label{urls}
+
+Man kann/sollte das \lstinline!hyperref!-Paket anpassen, die bunten
+Links kann man ausschalten.
+
+\begin{lstlisting}
+\hypersetup{breaklinks=true,
+bookmarks=true,
+pdfauthor={Mein Name},% <------------------- anpassen!
+pdftitle={Die Diplomarbeit},% <------------------- anpassen!
+colorlinks=true,
+citecolor=blue,
+urlcolor=blue,
+linkcolor=magenta,
+pdfborder={0 0 0}}
+
+\urlstyle{same}
+\end{lstlisting}
+
+\subsection{Pandoc-Caption mit
+Verweis}\label{pandoc-caption-mit-verweis}
+
+siehe \url{https://github.com/chiakaivalya/thesis-markdown-pandoc}
+
+This is how you insert figures using markdown. Also how to insert
+citations copied over from your bibliography manager (I specifically
+used Pandoc Citations in Papers).
+
+\begin{lstlisting}
+![Figure from Walczak, 2010[@Walczak:2010uk]. \label{mitosis} ](figures/mitosis_Walczak.pdf)
+\end{lstlisting}
+
+\subsection{Seitennummern}\label{seitennummern}
+
+\url{http://www.golatex.de/wiki/\%5Cfrontmatter}
+
+\begin{lstlisting}
+\frontmatter % switches to roman numbering
+\mainmatter
+\backmatter
+\end{lstlisting}
+
+\subsection{TU Wien -- Informatik}\label{tu-wien-informatik}
+
+\begin{itemize}
+\tightlist
+\item
+  \url{https://gitlab.cg.tuwien.ac.at/auzinger/vutinfth.git}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    super Vorlage und Build-Skripts (auch für Windows)
+  \end{itemize}
+\item
+  \url{http://www.informatik.tuwien.ac.at/dekanat/abschluss-master}
+\item
+  \url{http://www.informatik.tuwien.ac.at/fakultaet/informatik-code-of-ethics.pdf}
+\item
+  Alte Vorlage
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \url{http://ieg.ifs.tuwien.ac.at/~aigner/download/tuwien.sty}
+  \item
+    von dort sind die Abkürzungen kopiert
+  \end{itemize}
+\end{itemize}
+
+\section{Skripts}\label{skripts}
+
+\subsection{Pandoc nach Latex}\label{pandoc-nach-latex}
+
+\begin{lstlisting}[language=bash]
+#! /bin/bash
+#set -x
+#set -v
+set -e
+
+PANDOCMODULES=markdown+auto_identifiers
+PANDOCMODULES=${PANDOCMODULES}+definition_lists
+#PANDOCMODULES=${PANDOCMODULES}+compact_definition_lists
+PANDOCMODULES=${PANDOCMODULES}+fenced_code_attributes
+PANDOCMODULES=${PANDOCMODULES}+autolink_bare_uris
+PANDOCMODULES=${PANDOCMODULES}+simple_tables+table_captions
+PANDOCMODULES=${PANDOCMODULES}+inline_notes+footnotes
+
+
+PANDOCOPT="--listings-S -N -f ${PANDOCMODULES}"
+
+
+mkdir -p ../kaptex/
+rm -f ../kaptex/*
+
+for f in *.md
+do
+   out=$(basename $f .md).tex
+   echo -n $f " "
+   pandoc ${PANDOCOPT} $f -o ../kaptex/$out
+done
+\end{lstlisting}
+
+\subsection{Diplomarbeit bauen}\label{diplomarbeit-bauen}
+
+Wichtig -- damit alle Seitenummern und Verweise passen:
+
+\begin{itemize}
+\tightlist
+\item
+  erster Latex-Lauf
+\item
+  \lstinline!makeindex! und \lstinline!bibref! aufrufen
+\item
+  noch zweimal Latex
+\end{itemize}
+
+\begin{lstlisting}[language=bash]
+cd kapmd
+./create.sh
+cd ..
+pdflatex diplbuch.tex &&
+makeindex -c -q diplbuch.idx &&
+bibtex diplbuch
+pdflatex diplbuch.tex &&
+pdflatex diplbuch.tex
+\end{lstlisting}
+
